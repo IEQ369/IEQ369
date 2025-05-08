@@ -169,5 +169,153 @@
     </td>
   </tr>
 </table>
+<h2>Ramas, merge y conflictos</h2>
+
+<h2>¿Qué es una rama?</h2>
+
+<p>
+Una rama en Git es una línea independiente de desarrollo. Te permite trabajar en diferentes versiones de tu proyecto simultáneamente, sin interferir con el trabajo en otras ramas. Es como trabajar en diferentes tareas de tu proyecto al mismo tiempo, manteniendo cada tarea separada hasta que estén listas para combinarse.
+</p>
+
+<h3>¿Para qué sirven las ramas?</h3>
+
+<p>Permiten realizar un desarrollo no lineal y colaborativo.</p>
+
+<!--------------------------imagen----------------------------------------->
+
+<h2>Creando nuestra primera rama</h2>
+
+<p>
+El comando <code>git branch</code> nos permite crear, listar, eliminar y renombrar ramas. Para movernos a ella, tendremos que usar el comando <code>git switch</code>.
+</p>
+
+<pre><code class="language-bash">
+# Creamos la rama
+git branch mi-primera-rama
+
+# Cambiamos a la rama mi-primera-rama
+git switch mi-primera-rama
+</code></pre>
+
+<p>Es posible hacer los dos pasos en uno usando el comando:</p>
+
+<ul>
+  <li><code>git switch -c mi-primera-rama</code> Esto creará la rama y te llevará a ella con un solo comando.</li>
+  <li><code>git checkout -b mi-primera-rama</code> Esto también creará la rama y te llevará a ella con un solo comando.</li>
+</ul>
+<!------------------------------------------------------------------->
+<h1>Clase 3 - Fusionar ramas</h1>
+
+<p>
+Las bifurcaciones de código que hemos creado en forma de ramas tendrán dos destinos: acabar en el olvido para no terminar en ningún lado o ser fusionada en otra rama.
+</p>
+
+<p>
+Cuando hablamos de fusión nos referimos a que los cambios que hemos realizado en la rama se integran en otra rama, de forma que el código que habíamos generado en la nueva rama se asimila en otra.
+</p>
+
+<h3>Fusinando ramas</h3>
+
+<p>
+Empleamos el comando <code>git merge</code> para incorporar los cambios de una rama a la rama en la que nos encontramos en ese momento.
+</p>
+
+<!--------------------------imagen----------------------------------------->
+
+<pre><code class="language-bash">
+# Abrir el editor antes de hacer el commit
+git merge --edit
+
+# Evitar commit automáticamente
+git merge --no-commit
+</code></pre>
+
+<p>
+Al ejecutar el comando <code>git merge</code>, se creará un nuevo commit que incluye todos los cambios de la rama origen a la rama en la que nos encontramos ahora.
+</p>
+
+<h2>Eliminar ramas ¿por qué?</h2>
+
+<p>
+Porque es una buena práctica, además que las ramas tienen un propósito único y corto de periodo.
+</p>
+
+<p>
+Después de fusionar una rama en otra, es posible querer eliminarla para no dejarla suelta. Para ello puedes usar el comando <code>git branch</code> con el parámetro <code>--delete</code> o, de forma corta, <code>-d</code>.
+</p>
+
+<pre><code class="language-bash">
+# Borramos la rama llamada "mi-primera-rama"
+git branch --delete mi-primera-rama
+</code></pre>
+
+<p>
+Si hay el caso de querer borrar una rama que no ha sido fusionada previamente, se debe usar el parámetro <code>-D</code>. Este parámetro le indica a Git que borrará la rama sin importar si ha sido fusionada o no.
+</p>
+
+<pre><code class="language-bash">
+# Borramos la rama llamada "mi-primera-rama"
+git branch -D mi-primera-rama
+</code></pre>
+
+<h2>Conflictos en Git</h2>
+
+<p>
+¿Qué pasa si al querer fusionar dos ramas, la de destino ha realizado cambios en las mismas líneas de un fichero que los que queremos fusionar?
+</p>
+
+<p>Generan conflictos.</p>
+
+<h3>Resolviendo conflictos</h3>
+
+<p>
+Al resolver, deberemos decidir entre:
+</p>
+
+<ul>
+  <li>Nos quedamos con los cambios de la <em>rama main</em>.</li>
+  <li>Nos quedamos con los cambios que vienen de la <em>rama changes</em>.</li>
+  <li>Modificamos los cambios para hacer una fusión personalizada.</li>
+</ul>
+
+<!--------------------------imagen----------------------------------------->
+
+<h3>Comandos</h3>
+
+<p>En el video de la clase 2 se mencionaron los siguientes comandos de Git:</p>
+
+<ul>
+  <li><code>git branch</code>: Permite crear, listar, eliminar y renombrar ramas.
+    <ul>
+      <li><code>git branch &lt;nombre de rama&gt;</code></li>
+      <li><code>git branch -a</code></li>
+      <li><code>git branch -d &lt;nombre de rama&gt;</code></li>
+    </ul>
+  </li>
+  <li><code>git switch</code>: Se utiliza para cambiar de rama.
+    <ul>
+      <li><code>git switch &lt;nombre de rama&gt;</code></li>
+    </ul>
+  </li>
+  <li><code>git checkout</code>: También se utiliza para cambiar de rama.
+    <ul>
+      <li><code>git checkout &lt;nombre de rama&gt;</code></li>
+    </ul>
+  </li>
+  <li><code>git merge</code>: Para incorporar los cambios de una rama a la rama en la que nos encontramos.
+    <ul>
+      <li><code>git merge &lt;nombre de rama&gt;</code></li>
+      <li><code>git merge &lt;nombre de rama&gt; --no-f</code></li>
+    </ul>
+  </li>
+  <li><code>git push</code>: Para enviar los cambios confirmados a un repositorio remoto.</li>
+  <li><code>git log</code>: Para ver el historial de confirmaciones.
+    <ul>
+      <li><code>git log --oneline</code>: Para ver el historial de forma resumida.</li>
+      <li><code>git log --graph</code>: Para visualizar el historial en forma de grafo.</li>
+      <li><code>git log --graph --oneline</code>: Para visualizar el grafo en una línea.</li>
+    </ul>
+  </li>
+</ul>
 
 <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" />
