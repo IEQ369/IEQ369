@@ -181,7 +181,7 @@ Una rama en Git es una línea independiente de desarrollo. Te permite trabajar e
 
 <p>Permiten realizar un desarrollo no lineal y colaborativo.</p>
 
-<!--------------------------imagen----------------------------------------->
+<a href="https://postimg.cc/87WyZNd3"><img src="https://i.postimg.cc/bwVKNvZz/R.png" alt="R" width="500"/></a>
 
 <h2>Creando nuestra primera rama</h2>
 
@@ -203,7 +203,7 @@ git switch mi-primera-rama
   <li><code>git switch -c mi-primera-rama</code> Esto creará la rama y te llevará a ella con un solo comando.</li>
   <li><code>git checkout -b mi-primera-rama</code> Esto también creará la rama y te llevará a ella con un solo comando.</li>
 </ul>
-<!------------------------------------------------------------------->
+
 <h1>Clase 3 - Fusionar ramas</h1>
 
 <p>
@@ -220,7 +220,7 @@ Cuando hablamos de fusión nos referimos a que los cambios que hemos realizado e
 Empleamos el comando <code>git merge</code> para incorporar los cambios de una rama a la rama en la que nos encontramos en ese momento.
 </p>
 
-<!--------------------------imagen----------------------------------------->
+<a href="https://postimg.cc/jCT4bB0V"><img src="https://i.postimg.cc/c1g9QNFJ/R.jpg" alt="R" width="500"/></a>
 
 <pre><code class="language-bash">
 # Abrir el editor antes de hacer el commit
@@ -278,7 +278,7 @@ Al resolver, deberemos decidir entre:
   <li>Modificamos los cambios para hacer una fusión personalizada.</li>
 </ul>
 
-<!--------------------------imagen----------------------------------------->
+<a href="https://postimages.org/"><img src="https://i.postimg.cc/c1Psm0Zk/9a12c881-9c44-4a3d-8ee2-a55cd341d73b.webp" alt="9a12c881-9c44-4a3d-8ee2-a55cd341d73b" width="450"/></a>
 
 <h3>Comandos</h3>
 
@@ -318,4 +318,4 @@ Al resolver, deberemos decidir entre:
   </li>
 </ul>
 
-<img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" />
+<!-- <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" /> -->
