@@ -317,5 +317,96 @@ Al resolver, deberemos decidir entre:
     </ul>
   </li>
 </ul>
+# Clase 4 - Git y Github
 
+## Enlazar un repositorio local con un repositorio remoto
+
+como alias podemos usar cualquier nombre, por defecto es **origin** para indicar que el repositorio remoto que estamos sincronizando es el principal.
+
+Github utiliza las direcciones SSH por defecto. Por ello debemos utilizar estas, para añadir un repositorio local, se ejecuta el siguiente comando:
+
+`git Remote add origin <URL>`
+
+### Generar Key SSH
+
+- Listamos las llaves SSH que ya tenemos
+    - `ls -al ~/.ssh`
+- Crear key SSH
+    - ssh-keygen -t rsa -b 4096 -C “tu.email@gmail.com”
+    - press enter
+    - passphrase
+- Poner en marcha la key SSH
+    - `eval "$(ssh-agent -s)"`
+- Añadir key SSH
+    - `ssh-add ~/.ssh/id_rsa`
+- Copia en portapapeles
+    - `clip < ~/.ssh/id_rsa.pub`
+- Pegar en la sección “key”
+    - **https://github.com/settings/ssh/new**
+
+## Como forzar un push
+
+El comando **`git push -f`** (o **`git push --force`**) se utiliza para forzar el empuje de tus cambios locales hacia un repositorio remoto, incluso si esto resulta en la pérdida de commits o la reescritura del historial de la rama remota.
+
+- **`git push -f origin main`**
+
+## Clonando repositorio
+
+Para clonar un repositorio remoto necesitamos saber su dirección, que puede ser una dirección HTTPS o SSH.
+
+![Captura de pantalla 2024-05-11 194341.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ab7b88f-d3b1-4187-8226-b7d1e5e5a8c6/6675d034-4580-47f5-82b8-48ec601ac457/Captura_de_pantalla_2024-05-11_194341.png)
+
+Para clonar un repositorio remoto con la dirección SSH
+
+`git clone git@github.com:midudev/libro-javascript.git` 
+
+Para clonar un repositorio remoto con la dirección HTTPS
+
+`git clone https://github.com/midudev/libro-javascript.git` 
+
+## Escribiendo en el repositorio remoto
+
+Para enviar *commits* al repositorio remoto *origin* y la rama *main,* deberíamos ejecutar lo siguiente:
+
+`git push origin oigin main` 
+
+subirá los cambios del repositorio local al repositorio remoto con alias origin a la rama main
+
+## Creando una rama remota
+
+```bash
+#Creando una rama en el repositorio local
+git switch -c website
+
+#Enviar la rama a nuestro repositorio remoto para ello usamos git push:
+#git push <alias-repositorio> <rama>
+git push origin website
+```
+
+Ahora podemos empezara crear commits en nuestro repositorio local y enviarlos al repositorio remoto de la rama que hemos creado
+
+## Eliminar ramas de mi repositorio local
+
+El comando **`git remote prune origin`** se utiliza para eliminar referencias locales a ramas remotas que ya no existen en el repositorio remoto **`origin`**.
+
+```bash
+#ejecutamos el comando
+git remote prune origin
+```
+
+### Comandos
+
+Se mencionaron varios comandos de Git en la clase3:
+
+1. `git remote add origin <URL>`: Para enlazar un repositorio remoto con un repositorio local.
+2. `git push origin <nombre_rama>`: Para sincronizar los cambios del repositorio local con el repositorio remoto.
+3. `git branch -d <nombre_rama>`: Para eliminar una rama local.
+    1. `git branch -a`: Extiende la salida para incluir todas las ramas, tanto locales como remotas. Esto incluye las ramas locales y todas las ramas remotas que tu repositorio local conoce, aunque estas últimas no estén en tu sistema local.
+4. `git fetch`: Para actualizar la información entre el repositorio remoto y el repositorio local.
+5. `git switch <nombre_rama>`: Para cambiar a una rama específica.
+6. `git tag <nombre_tag>`: Para etiquetar ciertos commits importantes.
+7. `git remote remove <nombre_alias>`: Para eliminar un repositorio remoto conectado.
+8. **`git remote prune origin`** Se utiliza para eliminar referencias locales a ramas remotas que ya no existen en el repositorio remoto.
+9. `git clone <URL_Repositorio>`: Para clonar un repositorio remoto
+10. **`git remote -v`**: Se utiliza para mostrar las URL de los repositorios remotos configurados en tu repositorio local.
 <!-- <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" /> -->
