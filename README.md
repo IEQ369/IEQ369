@@ -22,7 +22,7 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://i.postimg.cc/vZDjL204/a2c1165235c53e8695b8bde7d9ae8366.jpg" width="300">
+      <img src="https://i.postimg.cc/vZDjL204/a2c1165235c53e8695b8bde7d9ae8366.jpg" width="600">
     </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/bd41f269-dab2-4da3-aa4d-79895b4344e0" width="300">
@@ -421,7 +421,7 @@ git remote prune origin
 ```
 # Push, Pull & Pull request
 
-<a href='https://postimg.cc/HJFFMT7z' target='_blank'><img src='https://i.postimg.cc/fLbs6LzG/Pull-Request.webp' border='0' alt='Pull-Request' width="90%"/></a>
+<a href='https://postimg.cc/HJFFMT7z' target='_blank'><img src='https://i.postimg.cc/fLbs6LzG/Pull-Request.webp' border='0' alt='Pull-Request' width="70%"/></a>
 
 ## ¿Cuál es la diferencia entre git push y git pull?
 
@@ -492,4 +492,51 @@ Se mencionaron varios comandos de Git en la clase 4:
 9. `git clone <URL_Repositorio>`: Para clonar un repositorio remoto
 10. **`git remote -v`**: Se utiliza para mostrar las URL de los repositorios remotos configurados en tu repositorio local.
 
+<!---------------------------------------------------------------------------------------------------------->
+
+# Clase 5 - GitFlow
+
+## Que es GitFlow?
+
+Es el flujode trabajo mas antiguo, utiliza las ramas:
+1.- main (o master): contener el codigo de produccion
+2.- develop: Código de preproducción que todavía tienen que ser probadas y validadas
+
+<a href='https://postimg.cc/68HsD45q' target='_blank'><img src='https://i.postimg.cc/MGwWf1C7/5e7444cb6b-1458190973507-jpg.png' border='0' alt='5e7444cb6b-1458190973507-jpg' width="50%"/></a>
+
+# Git Flow
+
+1. Feature: caracteristicas nuevas para el proyecto
+2. Release: Cambios de ultimo momento
+3. Hotfix: Parches o arreglar bugs pequeños
+
+[github.com](https://github.com/OpherV/gitflow4idea/branches/all)
+
+Rama *main* y cualquier otra rama que quiera ser integrada por medio de una Pull Request
+
+<img src="https://i.postimg.cc/0ybtG3sx/Captura-de-pantalla-2024-05-07-212235.png" alt="Captura de pantalla 2024-05-07 212235" style="width:50%;">
+
+## Trunk Based Development
+
+Solo la *rama main* y ramas auxiliares efímeras que quiera ser integrada por medio de una Pull Request.
+Es util si contamos con un buen Sistema CI/CD 
+
+<img src="https://i.postimg.cc/W4sdcR1c/Captura-de-pantalla-2024-05-07-212529.png" alt="Captura de pantalla 2024-05-07 212529" style="width:50%;">
+
+## Ship / Show / Ask
+
+1. Ship: Se fusiona en la rama principal sin revisión
+2. Show: Abre una petición de cambios para que sean revisados por CI pero se fusiona inmediatamente
+3. Ask: Abre un PR para discutir los cambios antes de fusionarlos
+
+<img src="https://i.postimg.cc/d11mvZVF/Captura-de-pantalla-2024-05-11-221916.png" alt="Captura de pantalla 2024-05-11 221916" style="width:50%;">
+
+## Las reglas de Ship / Show / Ask
+
+1. Tenemos un buen sistema de CI/CD
+2. Confiamos en el equipo y existen buenas practicas de desarrollo. Pair programming, mob programming, seniority… y, sobre todo, existe responsabilidad. La persona se responsabiliza de decidir la categoría de su cambio.
+3. Las revisiones de código no son requerimientos.
+4. Las ramas son lo mas pequeñas posibles, tienen un tiempo de vida corto y siempre salen directamente desde la rama principal.
+5. EL equipo ha sabido lidiar con el ego individual, las personas confían en el resto del equipo y las pruebas automáticas pasan.
+<!---------------------------------------------------------------------------------------------------------->
 <!-- <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" style="width: 60%;"> -->
