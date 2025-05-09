@@ -181,7 +181,7 @@ Una rama en Git es una línea independiente de desarrollo. Te permite trabajar e
 
 <p>Permiten realizar un desarrollo no lineal y colaborativo.</p>
 
-<a href="https://postimg.cc/87WyZNd3"><img src="https://i.postimg.cc/bwVKNvZz/R.png" alt="R" width="500"/></a>
+<a href="https://postimg.cc/87WyZNd3"><img src="https://i.postimg.cc/bwVKNvZz/R.png" alt="R" width="600"/></a>
 
 <h2>Creando nuestra primera rama</h2>
 
@@ -222,7 +222,17 @@ Cuando hablamos de fusión nos referimos a que los cambios que hemos realizado e
 Empleamos el comando <code>git merge</code> para incorporar los cambios de una rama a la rama en la que nos encontramos en ese momento.
 </p>
 
-<a href="https://postimg.cc/jCT4bB0V"><img src="https://i.postimg.cc/c1g9QNFJ/R.jpg" alt="R" width="500"/></a>
+<table>
+  <tr>
+    <td align="center">
+      <a href='https://postimg.cc/jCT4bB0V'><img src="https://i.postimg.cc/c1g9QNFJ/R.jpg" alt="R" width="500"></a>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/T3mkft8J/Captura-de-pantalla-2025-05-09-133545.png" width="250">
+    </td>
+  </tr>
+</table>
+
 
 <pre><code class="language-bash">
 # Abrir el editor antes de hacer el commit
@@ -262,6 +272,13 @@ git branch -D mi-primera-rama
 
 <h2>Conflictos en Git</h2>
 
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/7b60c774-eb36-4c07-af5c-7f4f4f323731" alt="Imagen 1" width="250"></td>
+    <td><img src="https://github.com/user-attachments/assets/25c848e4-92fa-4f79-b830-a994a50ecfe5" alt="Imagen 2" width="250"></td>
+  </tr>
+</table>
+
 <p>
 ¿Qué pasa si al querer fusionar dos ramas, la de destino ha realizado cambios en las mismas líneas de un fichero que los que queremos fusionar?
 </p>
@@ -284,7 +301,9 @@ Al resolver, deberemos decidir entre:
 
 <h3>Comandos</h3>
 
-<p>En el video de la clase 2 se mencionaron los siguientes comandos de Git:</p>
+<img src="https://github.com/user-attachments/assets/4650937e-42b8-4ea0-bda9-bdd3ff48d591" width="150">
+
+<p>comandos mencionados en la clase 2 y 3:</p>
 
 <ul>
   <li><code>git branch</code>: Permite crear, listar, eliminar y renombrar ramas.
@@ -323,6 +342,8 @@ Al resolver, deberemos decidir entre:
 <!---------------------------------------------------------------------------------->
 
 # Clase 4 - Git y Github
+
+<a href="https://postimg.cc/67tWFLQn" target="_blank"><img src="https://i.postimg.cc/HL7rc6DZ/git-vs-github-1024x512.png" width="80%" alt="git-vs-github-1024x512" /></a>
 
 ## Enlazar un repositorio local con un repositorio remoto
 
@@ -400,6 +421,8 @@ git remote prune origin
 ```
 # Push, Pull & Pull request
 
+<a href='https://postimg.cc/HJFFMT7z' target='_blank'><img src='https://i.postimg.cc/fLbs6LzG/Pull-Request.webp' border='0' alt='Pull-Request' width="90%"/></a>
+
 ## ¿Cuál es la diferencia entre git push y git pull?
 
 ### git push
@@ -453,6 +476,8 @@ Tenemos que subir nuestra rama con **`git push`** y hay dos maneras diferentes:
 
 ### Comandos
 
+<img src="https://i.imgur.com/8wILbyg.gif" alt="Roblox cayendo lentamente" style="width:40%;">
+
 Se mencionaron varios comandos de Git en la clase 4:
 
 1. `git remote add origin <URL>`: Para enlazar un repositorio remoto con un repositorio local.
@@ -466,4 +491,5 @@ Se mencionaron varios comandos de Git en la clase 4:
 8. **`git remote prune origin`** Se utiliza para eliminar referencias locales a ramas remotas que ya no existen en el repositorio remoto.
 9. `git clone <URL_Repositorio>`: Para clonar un repositorio remoto
 10. **`git remote -v`**: Se utiliza para mostrar las URL de los repositorios remotos configurados en tu repositorio local.
-<!-- <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" /> -->
+
+<!-- <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" style="width: 60%;"> -->
