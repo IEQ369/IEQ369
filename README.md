@@ -204,6 +204,8 @@ git switch mi-primera-rama
   <li><code>git checkout -b mi-primera-rama</code> Esto también creará la rama y te llevará a ella con un solo comando.</li>
 </ul>
 
+<!--------------------------------------------------------------------------------------->
+
 <h1>Clase 3 - Fusionar ramas</h1>
 
 <p>
@@ -317,6 +319,9 @@ Al resolver, deberemos decidir entre:
     </ul>
   </li>
 </ul>
+
+<!---------------------------------------------------------------------------------->
+
 # Clase 4 - Git y Github
 
 ## Enlazar un repositorio local con un repositorio remoto
@@ -354,7 +359,7 @@ El comando **`git push -f`** (o **`git push --force`**) se utiliza para forzar e
 
 Para clonar un repositorio remoto necesitamos saber su dirección, que puede ser una dirección HTTPS o SSH.
 
-![Captura de pantalla 2024-05-11 194341.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3ab7b88f-d3b1-4187-8226-b7d1e5e5a8c6/6675d034-4580-47f5-82b8-48ec601ac457/Captura_de_pantalla_2024-05-11_194341.png)
+<p align="center"><a href="https://postimages.org/"><img src="https://i.postimg.cc/MKSRnBTq/Captura-de-pantalla-2024-05-11-194341.png" alt="Captura de pantalla 2024-05-11 19:43:41" width="600"/></a></p>
 
 Para clonar un repositorio remoto con la dirección SSH
 
@@ -393,10 +398,62 @@ El comando **`git remote prune origin`** se utiliza para eliminar referencias lo
 #ejecutamos el comando
 git remote prune origin
 ```
+# Push, Pull & Pull request
+
+## ¿Cuál es la diferencia entre git push y git pull?
+
+### git push
+
+Nos sirve para **empujar** cualquier cambio o modificación del repositorio local al repositorio remoto
+
+- **`git push`**: Este comando se utiliza para subir los cambios locales a un repositorio remoto.
+    - **`git push --all`**
+- **`git push --force`** se utiliza para forzar el empuje de tus cambios locales hacia el repositorio remoto, incluso si esto resulta en la pérdida de commits o en la reescritura del historial de la rama remota.
+    - **`git push -f`**
+- **`git push --set-upstream <remoto> <rama>`**. Este comando te permite establecer la relación de seguimiento entre una rama local y una rama remota.
+- **`git push --delete <remoto> <rama>`** Se utiliza para eliminar una rama remota en un repositorio Git.
+    - **`git push -d origin <rama>`**
+- **`git push -u origin <rama>`** se utiliza para enviar tus cambios locales a una rama específica en el repositorio remoto llamado "origin" y al mismo tiempo establecer esa rama remota como el upstream (seguimiento) de la rama local actual.
+- **`git push origin <remoto> <rama_local>:<rama_remota>`**: Se utiliza para subir los cambios de una rama específica al repositorio remoto.
+
+### git pull
+
+Nos sirve para **jalar** o **descargar** los cambios o modificaciones del repositorio remoto al repositorio local.
+
+- **`git pull`**: Se utiliza para traer los cambios del repositorio remoto al repositorio local.
+- **`git pull origin <remoto> <rama>`**: Trae los cambios de una rama específica del repositorio remoto a la rama local.
+- **`git pull --all`**  Se utiliza para recuperar todas las ramas remotas y fusionarlas en las ramas locales correspondientes. Esto es útil cuando se quiere asegurar que se tienen todas las actualizaciones de todas las ramas remotas en el repositorio local.
+- **`git pull --set-upstream origin <rama>`** Realiza dos acciones:
+    1. Establece la rama remota **`origin/<rama>`** como el "upstream" de la rama local actual.
+    2. Realiza un pull para traer los cambios de la rama remota especificada (**`origin/<rama>`**) y fusionarlos automáticamente con la rama local actual.
+- **`git pull origin <rama1> <rama2> <ramaN>`** Realiza un pull de múltiples ramas desde el repositorio remoto llamado "origin" y las fusiona automáticamente con las ramas locales correspondientes.
+
+## ¿Qué es una Pull Request?
+
+Una Pull Request o **PR**, es una petición de cambios que se envía al repositorio.
+
+### ¿Cómo se hace una **PR**?
+
+Tenemos que subir nuestra rama con **`git push`** y hay dos maneras diferentes:
+
+1. La rama la subiste recientemente y aparece la opción en GitHub
+> Code
+2. Irnos al apartado Pull Request
+
+## Hacer una buena PR
+
+1. **Enfoca tu código en una sola cosa**, es mucho mas fácil revisar y aceptar una Pull Request  que hace una sola cosa a revisar una Pull Request que aprovecha a hacer muchas cosas.
+2. **Explica tu Pull Request**, y su una imagen vale mas que mil palabras. ¿Qué puede valer un GIF o un video mostrando la funcionalidad?
+
+## Revisar una PR
+
+1. Proporciona siempre feedback positivo
+2. concreción y claridad
+3. **Entiende el contexto**, es posible que a veces tengamos que poner paños calientes o parches a nuestro código y que, pese a no ser el más bonito, sí que cumpla su cometido.
 
 ### Comandos
 
-Se mencionaron varios comandos de Git en la clase3:
+Se mencionaron varios comandos de Git en la clase 4:
 
 1. `git remote add origin <URL>`: Para enlazar un repositorio remoto con un repositorio local.
 2. `git push origin <nombre_rama>`: Para sincronizar los cambios del repositorio local con el repositorio remoto.
