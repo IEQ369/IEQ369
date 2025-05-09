@@ -165,7 +165,7 @@
       </a>
     </td>
     <td>
-      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Bongo Cat" width="180">
+      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Bongo Cat" width="300">
     </td>
   </tr>
 </table>
@@ -538,5 +538,55 @@ Es util si contamos con un buen Sistema CI/CD
 3. Las revisiones de código no son requerimientos.
 4. Las ramas son lo mas pequeñas posibles, tienen un tiempo de vida corto y siempre salen directamente desde la rama principal.
 5. EL equipo ha sabido lidiar con el ego individual, las personas confían en el resto del equipo y las pruebas automáticas pasan.
+
 <!---------------------------------------------------------------------------------------------------------->
-<!-- <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" style="width: 60%;"> -->
+
+# Clase 6 - Buenas prácticas en Git
+
+## ¿Para qué sirven las buenas prácticas?
+
+- Es un estándar manejado en la mayoría de equipos de desarrollo.
+- Resolver conflictos o problemas durante el desarrollo es mas fácil
+- Tu historial de commits es mas legible
+
+## 1. ¿Cada cuánto debería hacer un commit?
+
+### **A menudo**
+
+ <img src="https://i.imgur.com/sVJ7jIs.gif" alt="Meme Git estilo Baki" style="width: 75%;">
+
+Es mejor hacer commits pequeños, agrupando pequeñas mejoras o acciones, que un commit con todo lo que se quiere hacer.
+
+Hacer commit a menudo no significa que debas hacer commits sin sentido.
+
+## Escribir buenos commits
+
+- Usar el verbo imperativo (Add, Change, Fix, Remove)
+- No uses punto final ni puntos suspensivos en tus mensajes (a lo más usa la coma)
+- Usa como máximo 50 caracteres para tu mensaje de commit
+- Añade todo el contexto que se necesario en el cuerpo del commit (con reglas de puntuación)
+- Considera usar utilidades para hacer commit
+- Usa un prefijo para tus commits para hacerlos mas semánticos.
+
+## Prefijos para commits
+
+- **feat: Para una nueva característica para el usuario.**
+- **fix**: para un bug que afecta al usuario.
+- **perf**: para cambios que mejoran el rendimiento del sitio
+- **build**: para cambios que mejoran el rendimiento del sitio.
+- **ci**: para cambios en la integración continua.
+- **docs**: para cambios en la documentación.
+- **refactor**: para refactorización del código como cambios de nombre de variables o funciones.
+- **style**: para cambios de formato, tabulaciones, espacios o puntos y coma, etc; no afectan al usuario.
+- **test**: para test o refactorización de uno ya existente.
+
+<img src="https://i.postimg.cc/mr5DKPcK/Captura-de-pantalla-2024-05-11-230400.png" alt="Captura de pantalla 2024-05-11 230400" style="width:50%;">
+
+## Escribir un buen nombre de rama
+
+- Sé consistente al nombrar tus ramas
+- Usa el nombre de la accion que se realiza en la rama
+
+<img src="https://i.postimg.cc/43bP5TmK/Captura-de-pantalla-2024-05-11-230606.png" alt="Captura de pantalla 2024-05-11 230606" style="width:50%;">
+
+- Usa los IDs de JIRA o el sistema de tickets que uses
