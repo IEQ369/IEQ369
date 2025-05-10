@@ -584,14 +584,21 @@ Hacer commit a menudo no significa que debas hacer commits sin sentido.
 
 <img src="https://i.postimg.cc/mr5DKPcK/Captura-de-pantalla-2024-05-11-230400.png" alt="Captura de pantalla 2024-05-11 230400" style="width:50%;">
 
-## Escribir un buen nombre de rama
-
-- Sé consistente al nombrar tus ramas
-- Usa el nombre de la accion que se realiza en la rama
-
-<img src="https://i.postimg.cc/43bP5TmK/Captura-de-pantalla-2024-05-11-230606.png" alt="Captura de pantalla 2024-05-11 230606" style="width:50%;">
-
-- Usa los IDs de JIRA o el sistema de tickets que uses
+<table>
+  <tr>
+    <td width="55%">
+      <h2>Escribir un buen nombre de rama</h2>
+      <ul>
+        <li>Sé consistente al nombrar tus ramas</li>
+        <li>Usa el nombre de la acción que se realiza en la rama</li>
+        <li>Usa los IDs de JIRA o el sistema de tickets que uses</li>
+      </ul>
+    </td>
+    <td>
+      <img src="https://i.postimg.cc/43bP5TmK/Captura-de-pantalla-2024-05-11-230606.png" alt="Captura de pantalla" style="width:100%;">
+    </td>
+  </tr>
+</table>
 
 <a href='https://github.com/user-attachments/assets/01d70597-5711-4c95-8342-570397b9f2dc' target='_blank'><img src='https://github.com/user-attachments/assets/01d70597-5711-4c95-8342-570397b9f2dc' border='0' alt='Image' style='width: 35%;'/></a>
 
@@ -611,6 +618,8 @@ Los comandos destructivos afectan el historial de commits realizado, sin embargo
 
 ### git reset
 
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/2SNmwftD/Captura-de-pantalla-2025-05-09-210841.png' border='0' alt='Captura-de-pantalla-2025-05-09-210841'/></a>
+
 posee 2 opciones
 
 - **soft**: Mantiene los cambios que ocurrieron antes de hacer commit desde donde apuntaba.
@@ -623,6 +632,8 @@ posee 2 opciones
     - **`git reset --hard <SHA>`**Borras la historia de tu repositorio hasta un punto específico, como si usaras un borrador para retroceder y eliminar todo lo que ocurrió después de ese punto.
 
 ### git revert
+
+<a href="https://postimages.org/" target="_blank"><img src="https://i.postimg.cc/nhFSZRjm/Captura-de-pantalla-2025-05-09-210624.png" alt="Captura de pantalla 2025-05-09 210624" style="width:40%;"></a>
 
 Revierte los cambios que un commit introdujo, y crea un nuevo commit con los cambios revertidos.
 
@@ -644,11 +655,15 @@ Nos permite recuperar código especifico de commits. Te permite cambiar entre di
 
 ## ¿Qué es un Hook?
 
+<img src="https://i.postimg.cc/1tMw0QrR/git-hooks.jpg" alt="git-hooks" width="600">
+
 - Un hook, o un punto de enganche, es la posibilidad de ejecutar una acción o script cada vez que ocurre un evento determinado de Git.
 - Hooks del lado del cliente
 - Hooks del lado del servidor
 
 ## Hooks del lado del cliente
+
+<img src="https://i.postimg.cc/1t4wKdCp/Captura-de-pantalla-2025-05-09-214715.png" alt="Captura-de-pantalla-2025-05-09-214715" width="800">
 
 Sólo afectan al repositorio local que los contiene.
 
@@ -667,6 +682,8 @@ Sólo afectan al repositorio local que los contiene.
     - Permite limpiar el directorio de trabajo, tras realizar un checkout, o el de limpiar las ramas que ya no se usan tras realizar un merge.
 
 ## Hooks del lado del servidor
+
+<img src="https://i.postimg.cc/3w5cVX54/Captura-de-pantalla-2025-05-09-214609.png" alt="Captura-de-pantalla-2025-05-09-214609" width="600">
 
 - **pre-receive**
     - Para comprobar que los commits que se quiere guardar estan bien formados.
