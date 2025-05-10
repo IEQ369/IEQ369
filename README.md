@@ -593,6 +593,8 @@ Hacer commit a menudo no significa que debas hacer commits sin sentido.
 
 - Usa los IDs de JIRA o el sistema de tickets que uses
 
+<a href='https://github.com/user-attachments/assets/01d70597-5711-4c95-8342-570397b9f2dc' target='_blank'><img src='https://github.com/user-attachments/assets/01d70597-5711-4c95-8342-570397b9f2dc' border='0' alt='Image' style='width: 35%;'/></a>
+
 <!---------------------------------------------------------------------------------------------------------->
 
 # Clase 7 - Deshacer cambios
@@ -632,5 +634,112 @@ Revierte los cambios que un commit introdujo, y crea un nuevo commit con los cam
 
 Nos permite recuperar código especifico de commits. Te permite cambiar entre diferentes ramas, moverte hacia atrás y hacia adelante en la historia del repositorio, y deshacer cambios en tus archivos.
 
-- **`git checkout HEAD~<N>`**Te permite volver al estado del proyecto en un commit específico anterior a los últimos N commits.
-- **`git checkout <SHA>`**Te permite moverte a un commit específico identificado por su hash **`<SHA>`.**
+- **`git checkout HEAD~<N>`** Te permite volver al estado del proyecto en un commit específico anterior a los últimos N commits.
+- **`git checkout <SHA>`** Te permite moverte a un commit específico identificado por su hash **`<SHA>`.**
+
+<img src="https://github.com/user-attachments/assets/a1c50544-282e-4fc3-b925-8e608d49c14a" alt="GIF" style="width: 15%;" />
+<!------------------------------------------------------------------->
+
+# Clase 8 - Hooks, Alias y Trucos de Git
+
+## ¿Qué es un Hook?
+
+- Un hook, o un punto de enganche, es la posibilidad de ejecutar una acción o script cada vez que ocurre un evento determinado de Git.
+- Hooks del lado del cliente
+- Hooks del lado del servidor
+
+## Hooks del lado del cliente
+
+Sólo afectan al repositorio local que los contiene.
+
+- **pre-commit**
+    - Podrías comprobar si se esta intentando hacer un commit de demasiados archivos.
+    - Puede ser un buen sitio para ejecutar el linter sobre los archivos que han sido modificados.
+- **prepare-commit-msg**
+    - Para modificar el mensaje del commit o añadir cualquier información extra.
+- **commit-msg**
+    - Es el sitio perfecto para hacer todas las comprobaciones pertinentes del mensaje
+- **post-commit**
+    - Su uso principal es la de notificar por Slack
+- **pre-push**
+    - Para ejecutar una bateria de test
+- **post-checkout y post-merge**
+    - Permite limpiar el directorio de trabajo, tras realizar un checkout, o el de limpiar las ramas que ya no se usan tras realizar un merge.
+
+## Hooks del lado del servidor
+
+- **pre-receive**
+    - Para comprobar que los commits que se quiere guardar estan bien formados.
+    - Verificar que el usuario que intenta grabar los commits tiene los permisos necesarios para hacerlo
+- **update**
+    - Puedes evitar de una forma granular cada actualizacion
+- **post-receive**
+    - Enviar un correo a todos los usuarios del repositorio que se han grabado nuevos cambios en el repositorio remoto
+    - Reflejar un una UI las nuevas referencias, ramas o commits disponibles.
+
+## Creando un hook
+
+Para crear un propio hook solo se tiene que crear un archivo nuevo nombre-del-hook en la carpeta .git/hooks y en el poner el código que quieras que se ejecute
+
+Puedes usar todo tipo de interpretes de lenguaje de programación como bash, node, python, perl, etc.
+
+## ¿Qué es un Alias?
+
+- Los alias permiten definir una serie de comandos que pueden ser usados en lugar de los nombre completos.
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/8zCyBm3R/Captura-de-pantalla-2024-05-11-235015.png' border='0' alt='Captura-de-pantalla-2024-05-11-235015'/></a>
+
+## Creando mi primer alias
+
+Git te permite crear tu propio alias facilmente para comandos que usas habitualmente en tu proyecto con este sistema de control de versiones.
+
+`git config --global alias.[nombre-del-alias] "comando a ejecutar"`
+
+## Trucos en Git
+
+### Guarda tus cambios temporalmente
+
+`git stash`
+`git stash -u
+git stash pop`
+
+### Aplicar cambios de commits en especifico
+
+`git cherry-pick <SHA>`
+
+### Detectar qué commit es el que ha introducido un bug
+
+`git bisect`
+`git bisect start
+git bisect bad
+git bisect good
+git bisect reset`
+
+### Cambiar el nombre de un commit
+
+`git commit --ammend -m <descripcion commit>`
+
+### Recuperar un archivo en concreto de otra rama o commit
+
+`git checkout <SHA> <archivo>`
+
+## Comandos
+
+<img src="https://github.com/user-attachments/assets/69fb01b3-78ad-4d75-840d-dfa0ffc549e7" alt="Imagen" style="width: 30%;" />
+
+comandos mencionados de la clase 8
+
+- `git config --global alias.[nombre-del-alias] "comando a ejecutar"`: Crea un alias para un comando de Git, facilitando su uso en el futuro.
+- `git stash`: Guarda temporalmente tus cambios actuales, permitiéndote volver a un estado limpio de tu repositorio.
+- `git stash -u`: Guarda también archivos no seguidos (no versionados) en el stash.
+- `git stash pop`: Aplica los cambios guardados en el stash y elimina el stash.
+- `git cherry-pick <SHA>`: Aplica un commit específico de otra rama al estado actual de tu rama.
+- `git bisect`: Ayuda a encontrar el commit que introdujo un error, realizando una búsqueda binaria entre buenos y malos commits.
+- `git bisect start`: Inicia el proceso de bisecting para encontrar el commit problemático.
+- `git bisect bad`: Marca el commit actual como "malo", es decir, contiene el error.
+- `git bisect good`: Marca el commit actual como "bueno", es decir, no tiene el error.
+- `git bisect reset`: Resetea el proceso de bisecting y regresa al estado original.
+- `git commit --ammend -m <descripcion commit>`: Modifica el último commit, permitiéndote cambiar el mensaje o agregar cambios.
+- `git checkout <SHA> <archivo>`: Recupera un archivo específico de un commit anterior o de otra rama.
+
+Fin.
